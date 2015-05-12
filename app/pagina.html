@@ -17,7 +17,7 @@
 
 			<div class="row">
 				<form class="form-inline" name="formTarefa">
-		  			<input id="newTask" type="text" ng-model="tarefa.compromisso" placeholder="Tarefas" required>
+		  			<input id="newTask" type="text" ng-model="tarefa.compromisso" placeholder="Tarefas" >
 		  			<button class="btn btn-primary" ng-click="adicionaTarefa()">Inserir</button>
 				</form>
 			</div>
@@ -28,12 +28,14 @@
 						<tr>
 							<th>Tarefas:</th>
 							<th>Concluida:</th>
+							<th>Remover:</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr ng-repeat="tarefa in tarefas" class="concluida-{{tarefa.concluida}}">
 							<td><strong>{{tarefa.compromisso}}</strong></td>
 							<td><input type="checkbox" ng-model="tarefa.concluida"></td>
+							<td><button class="btn btn-secondary" ng-click="delete($index)">x</button></td>
 						</tr>
 					</tbody>
 				</table>
